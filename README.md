@@ -136,10 +136,6 @@ This project is built using PlatformIO, a professional development environment f
 
 - VL53L0X library (version 1.3.1) included in `lib/` directory
 
-## Notes
-
-- The `Facturas/` directory contains billing/invoice documents and is not part of the project code.
-
 ## Acknowledgments
 
 Special thanks to AESS Estudiants ([https://aess-estudiants.vercel.app/](https://aess-estudiants.vercel.app/)) for organizing the AESSBOT tournaments and encouraging students to build and compete with robots. Their efforts in promoting robotics education and competition are greatly appreciated!
