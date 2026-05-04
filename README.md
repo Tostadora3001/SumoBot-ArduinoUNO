@@ -28,6 +28,7 @@ The code is organized in the `src/` directory:
 ## State Machine
 >[!NOTE]
 >The States name are in Spanish.
+
 The robot's behavior is controlled by a finite state machine implemented in `Control/Maquina_estados.cpp`. The states are:
 
 - **INICIO**: Initial rest state. The robot waits for the start signal (PIN_INICIO high).
