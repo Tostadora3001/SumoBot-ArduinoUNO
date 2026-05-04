@@ -16,6 +16,8 @@ This project implements a Sumo robot using PlatformIO in VS Code. The robot is d
   - 2 motors for robot movement and maneuvering
 
 ## Software Structure
+>[!NOTE]
+>The Directories', files' and States' names are in Spanish.
 
 The code is organized in the `src/` directory:
 
@@ -26,8 +28,6 @@ The code is organized in the `src/` directory:
 - `Sensores/`: Sensor reading and processing code
 
 ## State Machine
->[!NOTE]
->The State's names are in Spanish.
 
 The robot's behavior is controlled by a finite state machine implemented in `Control/Maquina_estados.cpp`. The states are:
 
