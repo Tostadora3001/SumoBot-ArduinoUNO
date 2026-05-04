@@ -1,3 +1,6 @@
+>[!NOTE]
+>This README is mainly made with IA.
+
 # AESBOT-Sumo
 
 This project implements a Sumo robot using PlatformIO in VS Code. The robot is designed to compete in Sumo wrestling by pushing opponents out of the ring using various sensors for navigation and opponent detection.
