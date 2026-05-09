@@ -69,11 +69,6 @@ void Detectar_INICIO();
 void Log_INFO();
 
 void maquina_de_estados(){
-    //Se limpian los actuadores al inicio de cada ciclo de la máquina de estados para evitar que se ejecuten acciones no deseadas.
-    for(int i = 0; i < 4; i++){
-        Flags_Actuadores[i] = 0;
-    }
-
     int Ultimo_Lugar_Conocido = NO_DETECTADO; // Variable para almacenar el último lugar donde se detectó al oponente, para usarlo en caso de perder la detección.
 
     //Este if controla el apagado. La señal de INICIO debe estar siempre HIGH durante la ejecución.
@@ -92,7 +87,11 @@ void maquina_de_estados(){
             break;
         case ANALISIS:
             //Se usan else if para evitar acciones simultaneas. En caso de cumplirse varias condiciones, se ejecutará la acción de mayor prioridad.
-
+            //Limpiamos el Flags_Actuadores para evitar interferencias
+            for(int i = 0; i < 4; i++){
+                Flags_Actuadores[i] = 0;
+            }
+            
             //Casos de NO_CAER:
             //Maxima Proioridad: Evitar Caída
             if(Flags_Sensores[IR_FRONTAL] > 0){
@@ -188,11 +187,6 @@ void maquina_de_estados(){
             break;
     }
 
-    //Una vez procesada la lógica del próximo estado a ejecutar, se limpian los sensores para evitar que se ejecuten acciones no deseadas en el próximo ciclo de la máquina de estados.
-    for(int i = 0; i < 9; i++){
-        Flags_Sensores[i] = 0;
-    }
-
     //Lógica de acciones a ejecutar en cada estado
     switch (Estado) {
         case INICIO:
@@ -200,6 +194,10 @@ void maquina_de_estados(){
             Detectar_INICIO(); // Se ejecuta la función de detección de inicio para actualizar el vector de sensores con el estado del inicio de la competición. 
             break;
         case SENSORES:
+            //Se limpia Flags_Sensores para evitar interferencias
+            for(int i = 0; i < 9; i++){
+                Flags_Sensores[i] = 0;
+            }
             //Se activan las mediciones de todos los sensores para actualizar el vector de Flags_Sensores.
             Ejecutar_Sensores();
             
